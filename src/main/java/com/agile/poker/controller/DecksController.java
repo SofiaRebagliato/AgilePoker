@@ -21,7 +21,8 @@ public class DecksController {
     @GetMapping(Endpoints.GET_DECKS)
     public ResponseEntity<List<Decks>> getAllDecks() {
 
-        return new ResponseEntity<>(decksService.findAll(), HttpStatus.OK);
+        return new ResponseEntity<>(decksService.findAll(), HttpStatus.OK); //Crear un listado de barajas que incluya
+        // también en bbdd las cartas que tiene
     }
 
     @GetMapping(Endpoints.GET_BY_ID)

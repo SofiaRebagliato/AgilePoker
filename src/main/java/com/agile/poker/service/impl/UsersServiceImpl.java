@@ -16,6 +16,7 @@ import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Service
@@ -27,6 +28,7 @@ public class UsersServiceImpl implements UsersService {
     @Autowired
     private PlayersRepository playersRepository;
 
+
     @Override
     @Transactional(readOnly = true)
     public List<Users> findAll() {
@@ -37,6 +39,18 @@ public class UsersServiceImpl implements UsersService {
     @Transactional(readOnly = true)
     public Users findById(UUID uuid) {
         return usersRepository.findById(uuid).orElseThrow(() -> new NoSuchElementException());
+    }
+    /*
+    @Override
+    @Transactional(readOnly = true)
+    public Users findByUserName(Users user) {
+        return usersRepository.findByUsername(user.getName());
+    }
+    */
+    @Override
+    @Transactional(readOnly = true)
+    public Users findByEmail(Users user) {
+        return usersRepository.findByEmail(user.getName());
     }
 
     @Override
@@ -84,4 +98,8 @@ public class UsersServiceImpl implements UsersService {
         addUser(existUser);
         return true;
     }
+
+    //public UserDetailsService userDetailsService() {
+      //  return (String username) -> usersRepository.findByEmail(username);
+    //}
 }

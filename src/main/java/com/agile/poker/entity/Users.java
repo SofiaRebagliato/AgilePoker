@@ -4,8 +4,10 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.Value;
 import org.antlr.v4.runtime.misc.NotNull;
 
+import java.util.Set;
 import java.util.UUID;
 
 @Table(name = "users")
@@ -30,4 +32,10 @@ public class Users {
     @Column(name = "password")
     @NotNull
     private String password;
+
+    public Users(String name, String email, String password) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+    }
 }

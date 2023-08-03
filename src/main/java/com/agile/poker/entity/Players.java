@@ -39,5 +39,5 @@ public class Players {
 
     @Column(name = "is_verify")
     @NotNull
-    private Boolean isVerify;
+    private Boolean isVerify; //verificar el id del usuario y ponerlo a true o false en función del usuario que sea
 }

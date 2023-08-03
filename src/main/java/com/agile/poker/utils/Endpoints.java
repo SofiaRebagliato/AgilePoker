@@ -8,6 +8,12 @@ public class Endpoints {
     public static final String PLAYERS = "/api/agilepoker/players";
     public static final String TOPICS = "/api/agilepoker/topics";
     public static final String USERS = "/api/agilepoker/users";
+    public static final String LOGIN = "api/agilepoker/login";
+
+    /**
+     * Reducir los endpoints de las listas a solo:
+     * GET = "/list" o solo la barra "/";
+     */
     public static final String GET_CARDS = "/listCards";
     public static final String GET_DECKS = "/listDecks";
     public static final String GET_MATCHES = "/listMatches";
@@ -15,8 +21,15 @@ public class Endpoints {
     public static final String GET_PLAYERS = "/listPlayers";
     public static final String GET_TOPICS = "/listTopics";
     public static final String GET_USERS = "/listUsers";
+
+    /**
+     *
+     */
+
     public static final String GET_BY_ID = "/{id}";
     public static final String GET_CARDS_OF_DECK_ID ="/listCards/{id}";
+    public static final String SIGNUP = "/signup";
+    public static final String SIGNIN = "/signin";
     public static final String SAVE = "/add";
     public static final String EDIT = "/edit/{id}";
     public static final String DELETE = "/delete/{id}";

@@ -42,7 +42,7 @@ public class PlayerController {
     @PutMapping(Endpoints.EDIT)
     public ResponseEntity<Players> updatePlayer(@PathVariable("id") UUID id, @RequestBody Players player) {
         var existPlayer = playerService.findById(id);
-
+        //Solo los Players que son Owners, son los que tienen permiso para hacer modificaciones
         if (playerService.isOwner(id)) {
             playerService.updatePlayer(existPlayer, player);
             playerService.addPlayer(player);
